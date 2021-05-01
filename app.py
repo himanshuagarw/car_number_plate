@@ -17,6 +17,7 @@ def index():
 
 	
 def run_detection(request):
+	result = run_inference('file.jpg')
 	result = Image.open('0001.jpg')
 	file_object = io.BytesIO()
 	result.save(file_object, 'PNG')
