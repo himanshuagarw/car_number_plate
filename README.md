@@ -1,87 +1,49 @@
-# Django-Heroku-Student-App
+# Heroku Django Starter Template
 
-## Dependencies
+An utterly fantastic project starter template for Django 2.0.
 
-`1` django-model-utils <br>
-`2` django django-heroku gunicorn <br>
-`3` git <br>
-`4` heroku cli <br>
+## Features
 
-# 1 Fork this repo
+- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
+- Enhancements to Django's static file serving functionality via WhiteNoise.
+- Latest Python 3.6 runtime environment.
 
-## 2 Create app on heroku
+## How to Use
 
-in my case app name is > 'your-heroku-app-name'
+To use this project, follow these steps:
 
-## 3 Install Git & Heroku
+1. Create your working environment.
+2. Install Django (`$ pipenv install django`)
+3. Create a new project using this template
 
-Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+## Creating Your Project
 
-Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
+Using this template to create a new Django app is easy::
 
-## 4 Login Heroku (terminal)
+    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
 
-> heroku login 
+(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
 
-(login with your credentials)
+You can replace ``helloworld`` with your desired project name.
 
-You'll see something like >  Logged in as user@mail.com
+## Deployment to Heroku
 
-# 5 Clone this repo locally
+    $ git init
+    $ git add -A
+    $ git commit -m "Initial commit"
 
-## 6 Update your settings.py file
+    $ heroku create
+    $ git push heroku master
 
-ALLOWED_HOSTS = ['your-heroku-app-name.herokuapp.com'] #Use your App name at Line 33
+    $ heroku run python manage.py migrate
 
-## 7 Push to Git
-
-make sure you're in project root directory /Django-Heroku-Student-App and your heroku is logged in
-
-> git add .
-
-> git commit -m "test django app"
-
-> git push
-
-# 8 Connect your Git repo with Heroku
-
-[Your Heroku Apps](https://dashboard.heroku.com/apps/) <br>
-https://dashboard.heroku.com/apps/(your-heroku-app-name)/deploy/github  #your app name
-
-Click on Connect to GitHub under Deployment method Section
-
-connect your github profile
-
-search > Django-Heroku-Student-App
-
-Connect your Git repo
-
-Deploy Branch
-
-## if collectstatic error (heroku deployment error)
-
-try on console with heroku login <br>
-> heroku config:set DISABLE_COLLECTSTATIC=1 --app 'your-heroku-app-name'
-
-# Make Migrations
-
-> heroku run python manage.py makemigrations --app 'your-heroku-app-name' <br>
-> heroku run python manage.py migrate --app 'your-heroku-app-name'
-
-# Create SuperUser
-
-> heroku run python manage.py createsuperuser --app 'your-heroku-app-name'
+See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
 
 
-# Custom Chnages
+## License: MIT
 
-heroku git:remote -a your-heroku-app-name 
-git push heroku main
+## Further Reading
 
-
-
- 
-# clone this repo
- 
- > [Django Heroku Student App](https://github.com/mustafaali96/Django-Heroku-Student-App)
-
+- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
+- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
+- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
